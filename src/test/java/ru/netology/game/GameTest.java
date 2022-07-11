@@ -7,8 +7,6 @@ import ru.netology.exceptions.AlreadyRegisteredException;
 import ru.netology.exceptions.NotRegisteredException;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class GameTest {
 
@@ -42,15 +40,25 @@ public class GameTest {
     @Test
     public void shouldRegisterPlayers() {
         prepare();
-        List<Player> expected = Arrays.asList(new Player[]{player1, player2, player3, player4, player5, player6, player7, player8, player9, player10});
-        List<Player> actual = game.players;
+        ArrayList<Player> expected = new ArrayList<>();
+        expected.add(player1);
+        expected.add(player2);
+        expected.add(player3);
+        expected.add(player4);
+        expected.add(player5);
+        expected.add(player6);
+        expected.add(player7);
+        expected.add(player8);
+        expected.add(player9);
+        expected.add(player10);
+        ArrayList<Player> actual = game.players;
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldIsEmptyIfNoAddElements() {
-        List<Player> expected = new ArrayList<>();
-        List<Player> actual = game.players;
+        ArrayList<Player> expected = new ArrayList<>();
+        ArrayList<Player> actual = game.players;
         assertEquals(expected, actual);
     }
 
