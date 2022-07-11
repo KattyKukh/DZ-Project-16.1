@@ -1,13 +1,8 @@
 package ru.netology.game;
 
 public class Player {
-    private int id;
     private String playerName;
     private int strength;
-
-    public int getId() {
-        return id;
-    }
 
     public String getPlayerName() {
         return playerName;
@@ -20,8 +15,7 @@ public class Player {
     public Player() {
     }
 
-    public Player(int id, String playerName, int strength) {
-        this.id = id;
+    public Player(String playerName, int strength) {
         this.playerName = playerName;
         this.strength = strength;
     }

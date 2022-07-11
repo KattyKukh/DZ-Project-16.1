@@ -7,22 +7,22 @@ import ru.netology.exceptions.AlreadyRegisteredException;
 import ru.netology.exceptions.NotRegisteredException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GameTest {
 
-    //    ArrayList<Player> players = new ArrayList<>();
     Game game = new Game();
 
-    Player player1 = new Player(1, "First", 10);
-    Player player2 = new Player(2, "Second", 20);
-    Player player3 = new Player(3, "Third", 30);
-    Player player4 = new Player(4, "Forth", 40);
-    Player player5 = new Player(5, "Fifth", 10);
-    Player player6 = new Player(6, "Sixth", 50);
-    Player player7 = new Player(7, "Seventh", 60);
-    Player player8 = new Player(8, "Eighth", 70);
-    Player player9 = new Player(9, "Ninth", 70);
-    Player player10 = new Player(10, "Tenth", 90);
+    Player player1 = new Player("First", 10);
+    Player player2 = new Player("Second", 20);
+    Player player3 = new Player("Third", 30);
+    Player player4 = new Player("Forth", 40);
+    Player player5 = new Player("Fifth", 10);
+    Player player6 = new Player("Sixth", 50);
+    Player player7 = new Player("Seventh", 60);
+    Player player8 = new Player("Eighth", 70);
+    Player player9 = new Player("Ninth", 70);
+    Player player10 = new Player("Tenth", 90);
 
     public void prepare() {
         game.register(player1);
@@ -40,25 +40,25 @@ public class GameTest {
     @Test
     public void shouldRegisterPlayers() {
         prepare();
-        ArrayList<Player> expected = new ArrayList<>();
-        expected.add(player1);
-        expected.add(player2);
-        expected.add(player3);
-        expected.add(player4);
-        expected.add(player5);
-        expected.add(player6);
-        expected.add(player7);
-        expected.add(player8);
-        expected.add(player9);
-        expected.add(player10);
-        ArrayList<Player> actual = game.players;
+        HashMap<String, Integer> expected = new HashMap<>();
+        expected.put("First", 10);
+        expected.put("Second", 20);
+        expected.put("Third", 30);
+        expected.put("Forth", 40);
+        expected.put("Fifth", 10);
+        expected.put("Sixth", 50);
+        expected.put("Seventh", 60);
+        expected.put("Eighth", 70);
+        expected.put("Ninth", 70);
+        expected.put("Tenth", 90);
+        HashMap<String, Integer> actual = game.players;
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldIsEmptyIfNoAddElements() {
-        ArrayList<Player> expected = new ArrayList<>();
-        ArrayList<Player> actual = game.players;
+        HashMap<String, Integer> expected = new HashMap<>();
+        HashMap<String, Integer> actual = game.players;
         assertEquals(expected, actual);
     }
 
