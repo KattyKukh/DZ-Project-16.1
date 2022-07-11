@@ -1,5 +1,7 @@
 package ru.netology.game;
 
+import java.util.Objects;
+
 public class Player {
     private int id;
     private String playerName;
@@ -15,9 +17,6 @@ public class Player {
 
     public int getStrength() {
         return strength;
-    }
-
-    public Player() {
     }
 
     public Player(int id, String playerName, int strength) {

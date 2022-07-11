@@ -16,14 +16,12 @@ public class Game {
 //    если сила одинаковая, то будет ничья. Метод должен возвращать одно число - 0 в случае ничьи, 1 в случае победы первого игрока
 //    и 2 в случае победы второго игрока.
 
-    Player player = new Player();
     ArrayList<Player> players = new ArrayList<>();
 
     public Player findByName(String name) {
-        Player foundPlayer = new Player();
         for (Player player : players) {
-            if (player.getPlayerName() == name) {
-                foundPlayer = player;
+            if (player.getPlayerName().equals(name)) {
+                Player foundPlayer = player;
                 return foundPlayer;
             }
         }
