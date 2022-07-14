@@ -51,14 +51,14 @@ public class GameTest {
         expected.add(player8);
         expected.add(player9);
         expected.add(player10);
-        ArrayList<Player> actual = game.players;
+        ArrayList<Player> actual = game.getPlayers();
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldIsEmptyIfNoAddElements() {
         ArrayList<Player> expected = new ArrayList<>();
-        ArrayList<Player> actual = game.players;
+        ArrayList<Player> actual = game.getPlayers();
         assertEquals(expected, actual);
     }
 
