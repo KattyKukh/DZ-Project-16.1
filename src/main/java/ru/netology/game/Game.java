@@ -10,7 +10,7 @@ public class Game {
     HashMap<String, Integer> players = new HashMap<>();
 
     public void register(Player player) {
-        if (players.containsKey(player.getPlayerName()) == false) {
+        if (!players.containsKey(player.getPlayerName())) {
             players.put(player.getPlayerName(), player.getStrength());
         } else {
             throw new AlreadyRegisteredException("Player " + player.getPlayerName() + " already exists!");
@@ -19,10 +19,10 @@ public class Game {
     }
 
     public int round(String playerName1, String playerName2) {
-        if (players.containsKey(playerName1) == false) {
+        if (!players.containsKey(playerName1)) {
             throw new NotRegisteredException(playerName1 + " is not registered!");
         }
-        if (players.containsKey(playerName2) == false) {
+        if (!players.containsKey(playerName2)) {
             throw new NotRegisteredException(playerName2 + " is not registered!");
         }
         if (players.get(playerName1) > players.get(playerName2)) {
